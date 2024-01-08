@@ -16,26 +16,28 @@ import jakarta.persistence.Id;
 public class Tattoo {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name="design_name")
+	@Column(name = "design_name")
 	private String designName;
-	
+
 	private String artist;
-	 
+
+	private String meaning;
+
 	private String style;
 	@CreationTimestamp
-	@Column(name="date_started")
-	 private LocalDateTime dateStarted;
-	
+	@Column(name = "date_started")
+	private LocalDateTime dateStarted;
+
 	@UpdateTimestamp
-	@Column(name="date_finished")
-	 private LocalDateTime dateFinished;
-	 
-	 private boolean enabled;
-	 
-	 @Column(name="image_url")
-	 private String imageUrl;
+	@Column(name = "date_finished")
+	private LocalDateTime dateFinished;
+
+	private boolean enabled;
+
+	@Column(name = "image_url")
+	private String imageUrl;
 
 	public Tattoo() {
 		super();
@@ -59,6 +61,14 @@ public class Tattoo {
 
 	public String getArtist() {
 		return artist;
+	}
+
+	public String getMeaning() {
+		return meaning;
+	}
+
+	public void setMeaning(String meaning) {
+		this.meaning = meaning;
 	}
 
 	public void setArtist(String artist) {
@@ -124,11 +134,9 @@ public class Tattoo {
 
 	@Override
 	public String toString() {
-		return "Tattoo [id=" + id + ", designName=" + designName + ", artist=" + artist + ", style=" + style
-				+ ", dateStarted=" + dateStarted + ", dateFinished=" + dateFinished + ", enabled=" + enabled
-				+ ", imageUrl=" + imageUrl + "]";
+		return "Tattoo [id=" + id + ", designName=" + designName + ", artist=" + artist + ", meaning=" + meaning
+				+ ", style=" + style + ", dateStarted=" + dateStarted + ", dateFinished=" + dateFinished + ", enabled="
+				+ enabled + ", imageUrl=" + imageUrl + "]";
 	}
-	 
-	 
-	 
+
 }
