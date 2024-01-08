@@ -32,12 +32,8 @@ This is a tattoo catalog Using REST API technology and Postman. With CRUD (Creat
 
 | HTTP Verb | URI               | Request Body | Response Body | Status Codes |
 |-----------|-------------------|--------------|---------------|---------|
-| GET       | `/api/tattoos`     |              | List of all _tattoo_ entities | 200 |
-
+| GET       | `/api/tattoos`      |              | List of all _tattoo_ entities | 200 |
 | GET       | `/api/tattoos/3`   |              | JSON of _tattoos_ `3` | 200,404 |
-
-| POST      | `/api/tattoos`     | JSON of a new _tattoo_ entity  | JSON of created _tattoo_ | 201,400 |
-
-| PUT       | `/api/tattoos/10`  | JSON of a new version of _tattoo_ `10` | JSON of updated _tattoos_ | 200,404,400 |
-
-| DELETE    | `/api/tattoos/10`  |              |               | 204,404,400|
+| POST      | `/api/tattoos`      | JSON of a new _tattoo_ entity  | JSON of created _tattoo_ | 201,400 |
+| PUT       | `/api/tattoos/10`   | JSON of a new version of _tattoo_ `10` | JSON of updated _tattoos_ | 200,404,400 |
+| DELETE    | `/api/tattoos/10`   |              |               | 204,404,400|
