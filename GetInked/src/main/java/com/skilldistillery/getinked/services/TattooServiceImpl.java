@@ -29,7 +29,8 @@ public class TattooServiceImpl implements TattooService {
 	@Override
 	public Tattoo create(Tattoo tat) {
 		
-		return tatRepo.saveAndFlush(tat);
+		Tattoo newTatt = tatRepo.saveAndFlush(tat);
+		return newTatt;
 	}
 
 	@Override

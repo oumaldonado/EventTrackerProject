@@ -31,7 +31,6 @@ public class TattooController {
 	public List<Tattoo> index() {
 
 		List<Tattoo> tats = ts.getEnabledTattoos();
-//		List<Tattoo> tats = ts.getEnabledTattoos();//if i wanted to show all enabled tattoos.
 
 		return tats;
 	}
