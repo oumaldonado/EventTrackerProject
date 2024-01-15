@@ -1,6 +1,6 @@
 # EventTrackerProject
 
-This is a tattoo catalog Using REST API technology and Postman. With CRUD (Create, Read, Update, Delete) actions.
+This website is a tattoo catalog that uses REST API technology and Postman. You can easily Create, Read, Update, and Delete tattoo entries. Whether you want to add new tattoos, check existing ones, edit details, or remove entries, it's all straightforward with the CRUD actions provided here."
 
 # Tech Used
 
