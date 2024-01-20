@@ -1,4 +1,117 @@
-<h1>Welcome to GetInked!</h1>
-<ul>
-  <li *ngFor="let tattoo of tattoos">{{tattoo.designName}}</li>
-</ul>
+<h1>GetInked</h1>
+<button class="btn btn-success" type="button" (click)="setAddTattoo()">
+  Create
+</button>
+<div *ngIf="newTattoo">
+  <div *ngIf="!editTattoo">
+    <form>
+      <div>
+        <input
+          class="form-control"
+          name="designName"
+          type="text"
+          [(ngModel)]="newTattoo.designName"
+          placeholder="Name of Design"
+        /><br /><br />
+        <input
+          class="form-control"
+          name="imageUrl"
+          type="text"
+          [(ngModel)]="newTattoo.imageUrl"
+          placeholder="ImageUrl"
+        /><br /><br />
+        <input
+          class="form-control"
+          name="artist"
+          type="text"
+          [(ngModel)]="newTattoo.artist"
+          placeholder="Artist Name"
+        /><br /><br />
+        <input
+          class="form-control"
+          name="meaning"
+          type="text"
+          [(ngModel)]="newTattoo.meaning"
+          placeholder="Meaning"
+        /><br /><br />
+        <input
+          class="form-control"
+          name="style"
+          type="text"
+          [(ngModel)]="newTattoo.style"
+          placeholder="Style"
+        /><br />
+      </div>
+    </form>
+    <button
+      class="btn btn-primary"
+      type="button"
+      (click)="addTattoo(newTattoo)"
+    >
+      Add Tattoo
+    </button>
+    <button class="btn btn-primary" type="button" (click)="newTattoo = null">
+      Cancel
+    </button>
+  </div>
+</div>
+<div *ngIf="!editTattoo && !newTattoo">
+
+  <select [(ngModel)]="selectedArtist">
+    <option *ngFor="let artist of artists" value="{{artist}}">{{artist}}</option>
+  </select>
+  <div *ngFor="let tattoo of tattoos|artist:selectedArtist">
+    <h3>Design Name: {{ tattoo.designName }}</h3>
+    <img
+      [src]="tattoo.imageUrl"
+      [alt]="tattoo.designName"
+      width="350"
+      height="250"
+    />
+    <p>Artist: {{ tattoo.artist }}</p>
+    <blockquote>Meaning: {{ tattoo.meaning }}</blockquote>
+    <p>Style: {{ tattoo.style }}</p>
+    <button class="btn btn-danger" (click)="deleteTattoo(tattoo.id)">X</button>
+    <button class="btn btn-warning" (click)="setEditTattoo(tattoo)">
+      Edit
+    </button>
+    <hr />
+  </div>
+</div>
+
+<form *ngIf="editTattoo">
+  <div class="form-gruop">
+    <label for="designName">Design name</label>
+    <input
+      class="form-control"
+      [(ngModel)]="editTattoo.designName"
+      type="text"
+      name="designName"
+    /><br />
+    <label for="meaning">Meaning</label>
+    <input
+      class="form-control"
+      [(ngModel)]="editTattoo.meaning"
+      type="text"
+      name="meaning"
+    /><br />
+    <label for="artist">Artist: </label>
+    <input
+      [(ngModel)]="editTattoo.artist"
+      class="form-control"
+      type="text"
+      name="artist"
+    /><br /><br />
+    <label for="imageUrl">Image Url:</label>
+    <input
+      [(ngModel)]="editTattoo.imageUrl"
+      class="form-control"
+      type="text"
+      name="imageUrl"
+    /><br />
+  </div>
+  <button class="btn btn-primary" (click)="editTattoo = null">Cancel</button>
+  <button class="btn btn-warning" (click)="updateTattoo(editTattoo)">
+    Save
+  </button>
+</form>
