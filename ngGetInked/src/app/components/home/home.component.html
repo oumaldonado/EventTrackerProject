@@ -1,4 +1,21 @@
-<h1>GetInked</h1>
+<h1 id="mainTitle">Get Inked</h1>
+<div class="image-container">
+  <img
+    id="mainImage"
+    src="assets/images/eye-crying-tattoo-9866.png"
+    alt="Image Description"
+    height="100"
+    width="150"
+  />
+  <!-- <img
+    id="mainImage2"
+    src="assets/images/eye-crying-tattoo-9866.png"
+    alt="Image Description"
+    height="45"
+    width="75"
+  /> -->
+
+</div>
 <button class="btn btn-success" type="button" (click)="setAddTattoo()">
   Create
 </button>
@@ -56,29 +73,38 @@
   </div>
 </div>
 <div *ngIf="!editTattoo && !newTattoo">
-
-  <select [(ngModel)]="selectedArtist">
-    <option *ngFor="let artist of artists" value="{{artist}}">{{artist}}</option>
+  <select
+    [(ngModel)]="selectedArtist"
+    class="form-select"
+    aria-label="Default select example"
+  >
+    <option *ngFor="let artist of artists" value="{{ artist }}">
+      {{ artist }}
+    </option>
   </select>
-  <div *ngFor="let tattoo of tattoos|artist:selectedArtist">
-    <h3>Design Name: {{ tattoo.designName }}</h3>
-    <img
-      [src]="tattoo.imageUrl"
-      [alt]="tattoo.designName"
-      width="350"
-      height="250"
-    />
-    <p>Artist: {{ tattoo.artist }}</p>
-    <blockquote>Meaning: {{ tattoo.meaning }}</blockquote>
-    <p>Style: {{ tattoo.style }}</p>
-    <button class="btn btn-danger" (click)="deleteTattoo(tattoo.id)">X</button>
-    <button class="btn btn-warning" (click)="setEditTattoo(tattoo)">
-      Edit
-    </button>
-    <hr />
+  <div id="verticalStripe">
+    <div *ngFor="let tattoo of tattoos | artist : selectedArtist">
+      <h3>Design Name: {{ tattoo.designName }}</h3>
+      <img
+        id="tattooImg"
+        [src]="tattoo.imageUrl"
+        [alt]="tattoo.designName"
+        width="350"
+        height="250"
+      />
+      <p>Artist: {{ tattoo.artist }}</p>
+      <blockquote id="block">Meaning: {{ tattoo.meaning }}</blockquote>
+      <p>Style: {{ tattoo.style }}</p>
+      <button class="btn btn-danger" (click)="deleteTattoo(tattoo.id)">
+        X
+      </button>
+      <button class="btn btn-warning" (click)="setEditTattoo(tattoo)">
+        Edit
+      </button>
+      <hr />
+    </div>
   </div>
 </div>
-
 <form *ngIf="editTattoo">
   <div class="form-gruop">
     <label for="designName">Design name</label>

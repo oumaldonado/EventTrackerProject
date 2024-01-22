@@ -1,0 +1,49 @@
+body {
+  background-color: #618a8e;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+
+}
+#mainImage{
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+}
+#mainImage2{
+  position: absolute;
+  top: 5%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+
+
+}
+#verticalStripe {
+  /* Set background color, height, and width */
+  background-color: rgb(251, 251, 251); /* Replace with your desired color */
+  height: auto; /* Full height of the viewport */
+  width: 85%; /* Adjust the width as needed */
+
+  /* Center the stripe vertically */
+  position: absolute;
+  top: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Add padding or margin if needed */
+  padding: 20px;
+}
+#tattooImg{
+  border: 3px solid black;
+  bo
+
+}
+
+
+
+
