@@ -11,14 +11,14 @@ body {
 
 
 }
-#mainImage2{
+/* #mainImage2{
   position: absolute;
   top: 5%;
   left: 30%;
   transform: translate(-50%, -50%);
 
 
-}
+} */
 #verticalStripe {
   /* Set background color, height, and width */
   background-color: rgb(251, 251, 251); /* Replace with your desired color */
@@ -40,7 +40,7 @@ body {
 }
 #tattooImg{
   border: 3px solid black;
-  bo
+
 
 }
 
