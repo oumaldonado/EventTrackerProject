@@ -1,23 +1,5 @@
 
-<h1 id="mainTitle">Get Inked</h1>
-<a href="indexStatic.html">go to Javascript/Ajax</a>
-<div class="image-container">
-  <img
-    id="mainImage"
-    src="assets/images/eye-crying-tattoo-9866.png"
-    alt="Image Description"
-    height="100"
-    width="150"
-  />
-  <!-- <img
-    id="mainImage2"
-    src="assets/images/eye-crying-tattoo-9866.png"
-    alt="Image Description"
-    height="45"
-    width="75"
-  /> -->
-
-</div>
+ <div class="fluid-container">
 <button class="btn btn-success" type="button" (click)="setAddTattoo()">
   Create
 </button>
@@ -84,29 +66,32 @@
       {{ artist }}
     </option>
   </select>
-  <div id="verticalStripe">
-    <div *ngFor="let tattoo of tattoos | artist : selectedArtist">
-      <h3>Design Name: {{ tattoo.designName }}</h3>
-      <img
-        id="tattooImg"
-        [src]="tattoo.imageUrl"
-        [alt]="tattoo.designName"
-        width="350"
-        height="250"
-      />
-      <p>Artist: {{ tattoo.artist }}</p>
-      <blockquote id="block">Meaning: {{ tattoo.meaning }}</blockquote>
-      <p>Style: {{ tattoo.style }}</p>
-      <button class="btn btn-danger" (click)="deleteTattoo(tattoo.id)">
-        X
-      </button>
-      <button class="btn btn-warning" (click)="setEditTattoo(tattoo)">
-        Edit
-      </button>
-      <hr />
-    </div>
+
+
+
+  <div class="card" *ngFor="let tattoo of tattoos | artist : selectedArtist" >
+    <h3>Design Name: {{ tattoo.designName }}</h3>
+    <img
+    id="tattooImg"
+    [src]="tattoo.imageUrl"
+    [alt]="tattoo.designName"
+    width="350"
+    height="250"
+    />
+    <p>Artist: {{ tattoo.artist }}</p>
+    <blockquote id="block">Meaning: {{ tattoo.meaning }}</blockquote>
+    <p>Style: {{ tattoo.style }}</p>
+    <button class="btn btn-danger" (click)="deleteTattoo(tattoo.id)">
+      X
+    </button>
+    <button class="btn btn-warning" (click)="setEditTattoo(tattoo)">
+      Edit
+    </button>
+    <hr />
   </div>
 </div>
+
+
 <form *ngIf="editTattoo">
   <div class="form-gruop">
     <label for="designName">Design name</label>
@@ -151,3 +136,14 @@
   </button>
 </form>
 
+<!--
+
+***This is to upload from desktop***
+
+<form action="/action_page.php">
+  <input type="file" id="myFile" name="filename">
+  <input type="submit">
+</form>
+
+
+ -->

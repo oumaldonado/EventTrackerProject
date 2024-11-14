@@ -8,7 +8,7 @@ import { ArtistPipe } from '../../pipes/artist.pipe';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FormsModule,ArtistPipe],
+  imports: [CommonModule, FormsModule, ArtistPipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
